@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fiskit"
+version = "0.1.0"
+description = "Official Python client for the FisKit API: electronic invoices with ARCA (ex AFIP) in a single request."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = ["arca", "afip", "factura electronica", "invoicing", "argentina", "cae", "fiskit"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Office/Business :: Financial :: Accounting",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://fiskit.com.ar"
+Documentation = "https://fiskit.com.ar/developers"
+
+[tool.hatch.build.targets.wheel]
+packages = ["fiskit"]
