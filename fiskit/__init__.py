@@ -18,7 +18,7 @@ import uuid
 from typing import Any, Mapping, Optional
 
 __all__ = ["Fiskit", "FiskitError", "verify_webhook"]
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 
 DEFAULT_BASE_URL = "https://api.fiskit.com.ar"
 _RETRYABLE = {408, 409, 429, 500, 502, 503, 504}
@@ -108,15 +108,15 @@ class _Invoices:
                                     idempotency_key=idempotency_key or str(uuid.uuid4()))
 
     def retrieve(self, invoice_id: str) -> dict:
-        return self._client.request("GET", f"/v1/invoices/{urllib.parse.quote(invoice_id)}")
+        return self._client.request("GET", f"/v1/invoices/{urllib.parse.quote(invoice_id, safe="")}")
 
     def pdf(self, invoice_id: str) -> bytes:
         """The voucher PDF as bytes."""
-        return self._client.request("GET", f"/v1/invoices/{urllib.parse.quote(invoice_id)}/pdf", binary=True)
+        return self._client.request("GET", f"/v1/invoices/{urllib.parse.quote(invoice_id, safe="")}/pdf", binary=True)
 
     def email(self, invoice_id: str, email: Optional[str] = None) -> dict:
         """Emails the PDF to the customer; without email, to receiver.email of the invoice."""
-        return self._client.request("POST", f"/v1/invoices/{urllib.parse.quote(invoice_id)}/email",
+        return self._client.request("POST", f"/v1/invoices/{urllib.parse.quote(invoice_id, safe="")}/email",
                                     body={"email": email} if email else {})
 
 
@@ -126,7 +126,7 @@ class _Taxpayers:
 
     def retrieve(self, cuit: int | str) -> dict:
         """Name, address and VAT condition of a CUIT, from the ARCA registry."""
-        return self._client.request("GET", f"/v1/taxpayers/{urllib.parse.quote(str(cuit))}")
+        return self._client.request("GET", f"/v1/taxpayers/{urllib.parse.quote(str(cuit), safe="")}")
 
 
 def verify_webhook(raw_body: str | bytes, headers: Mapping[str, str], secret: str, *,
