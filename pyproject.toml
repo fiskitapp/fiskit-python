@@ -7,7 +7,7 @@ name = "fiskit"
 version = "0.1.0"
 description = "Official Python client for the FisKit API: electronic invoices with ARCA (ex AFIP) in a single request."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = "MIT"
 keywords = ["arca", "afip", "factura electronica", "invoicing", "argentina", "cae", "fiskit"]
 classifiers = [

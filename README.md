@@ -1,6 +1,6 @@
 # FisKit para Python
 
-Cliente oficial de la API de [FisKit](https://fiskit.com.ar): facturas electrónicas de ARCA (ex AFIP) con un solo pedido. Sin dependencias, para Python 3.9 o superior.
+Cliente oficial de la API de [FisKit](https://fiskit.com.ar): facturas electrónicas de ARCA (ex AFIP) con un solo pedido. Sin dependencias, para Python 3.10 o superior.
 
 ```bash
 pip install fiskit
