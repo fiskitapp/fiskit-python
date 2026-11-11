@@ -18,7 +18,7 @@ import uuid
 from typing import Any, Mapping, Optional
 
 __all__ = ["Fiskit", "FiskitError", "verify_webhook"]
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 DEFAULT_BASE_URL = "https://api.fiskit.com.ar"
 _RETRYABLE = {408, 409, 429, 500, 502, 503, 504}
