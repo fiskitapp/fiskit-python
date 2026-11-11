@@ -21,8 +21,8 @@ dependencies = []
 [project.urls]
 Homepage = "https://fiskit.com.ar"
 Documentation = "https://fiskit.com.ar/developers"
-Source = "https://github.com/FidelGenre/fiskit-python"
-Issues = "https://github.com/FidelGenre/fiskit-python/issues"
+Source = "https://github.com/fiskitapp/fiskit-python"
+Issues = "https://github.com/fiskitapp/fiskit-python/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["fiskit"]
